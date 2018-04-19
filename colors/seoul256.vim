@@ -437,3 +437,28 @@ if s:colors_name != g:colors_name || s:background == s:style
 else
   let &background = s:background
 endif
+
+
+
+" Overrides!
+" We’re sticking to terminal’s colors here
+" to play well with e.g. semi-transparency of macOS Terminal.
+
+" for background and text colors:
+hi Normal ctermbg=NONE
+hi Normal ctermfg=NONE
+
+" for gutter background:
+hi SignColumn ctermbg=NONE
+
+" for vertical split
+hi VertSplit ctermbg=NONE cterm=NONE
+
+" for VCS diff marks:
+hi SignifySignAdd ctermbg=NONE
+hi SignifySignChange ctermbg=NONE
+hi SignifySignDelete ctermbg=NONE
+
+" for non-text post-EOF lines,
+" assuming the terminal has “0” mapped to something unobtrusive
+hi EndOfBuffer ctermfg=0
